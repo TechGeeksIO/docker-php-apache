@@ -1,5 +1,5 @@
 FROM php:7.4.9-apache
-LABEL maintainer="dev@chialab.io"
+LABEL maintainer="admin@techgeeks.io"
 
 # Download script to install PHP extensions and dependencies
 ADD https://raw.githubusercontent.com/mlocati/docker-php-extension-installer/master/install-php-extensions /usr/local/bin/

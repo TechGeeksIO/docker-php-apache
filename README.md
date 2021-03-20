@@ -46,7 +46,7 @@ Change permissions to your docker user, this will allow you to change, add or re
 sudo chown -R <docker-user>:<docker-group> <DATADIR>/apache24
 ```
 
-> Run your docker-compose
+> **Run your docker-compose**
 
 Activate the additional volumes in your docker-compose file
 ```bash
@@ -54,4 +54,4 @@ Activate the additional volumes in your docker-compose file
       - ${DATADIR}/apache24/<your-domain.com>/config/php:/usr/local/etc/php/
 ```
 
-> Run your docker-compose again
+> **Run your docker-compose again**

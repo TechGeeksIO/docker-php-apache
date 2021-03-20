@@ -16,8 +16,8 @@
       - PGID=${PGID}
     volumes:
       - ${DATADIR}/apache24/<your-domain.com>/www:/var/www/html/
-      #- ${DATADIR}/apache24/<your-domain.com>/confs/apache:/etc/apache2/
-      #- ${DATADIR}/apache24/<your-domain.com>/confs/php:/usr/local/etc/php/
+      #- ${DATADIR}/apache24/<your-domain.com>/config/apache:/etc/apache2/
+      #- ${DATADIR}/apache24/<your-domain.com>/config/php:/usr/local/etc/php/
     labels:
       - "traefik.enable=true"
       # Router HTTP for https redirection
@@ -38,8 +38,8 @@
 Copy default container files to your host
 ```bash
 sudo mkdir -p <DATADIR>/apache24/<your-domain.com>
-sudo docker cp <container-id><container-name><your-domain.com>:/etc/apache/ <DATADIR>/apache24/<your-domain.com>/confs/
-sudo docker cp <container-id><container-name><your-domain.com>:/usr/local/etc/php/ <DATADIR>/apache24/<your-domain.com>/confs/
+sudo docker cp <container-id><container-name><your-domain.com>:/etc/apache/ <DATADIR>/apache24/<your-domain.com>/config/
+sudo docker cp <container-id><container-name><your-domain.com>:/usr/local/etc/php/ <DATADIR>/apache24/<your-domain.com>/config/
 ```
 
 Change permissions to your docker user, this will allow you to change, add or remove files
@@ -51,8 +51,8 @@ sudo chown -R <docker-user>:<docker-group> <DATADIR>/apache24
 
 Activate the additional volumes in your docker-compose file
 ```bash
-      - ${DATADIR}/apache24/<your-domain.com>/confs/apache:/etc/apache2/
-      - ${DATADIR}/apache24/<your-domain.com>/confs/php:/usr/local/etc/php/
+      - ${DATADIR}/apache24/<your-domain.com>/config/apache:/etc/apache2/
+      - ${DATADIR}/apache24/<your-domain.com>/config/php:/usr/local/etc/php/
 ```
 
 > Run your docker-compose again

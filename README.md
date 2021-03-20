@@ -36,6 +36,7 @@
       - "traefik.http.services.<service name>.loadbalancer.server.port=80"
 ```
 > **Run your docker-compose**
+
 <br/><br/>
 
 #### Additional steps to get access to the apache & php configs

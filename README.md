@@ -3,8 +3,9 @@
 
 
 #### Docker-compose example with traefik 2 reverse proxy
+
 ```
-  <your-domain><service name>:
+  <service name>:
     image: techgeeks/php-apache-dev:latest
     hostname: <your-domain.com>
     container_name: <your-domain.com>
@@ -21,15 +22,15 @@
     labels:
       - "traefik.enable=true"
       # Router HTTP for https redirection
-      - "traefik.http.routers.<your-domain><service name>-http.rule=Host(`<your-domain.com>`)"
-      - "traefik.http.routers.<your-domain><service name>-http.entrypoints=web"
-      - "traefik.http.routers.<your-domain><service name>-http.middlewares=https-redirect@file"
+      - "traefik.http.routers.<service name>-http.rule=Host(`<your-domain.com>`)"
+      - "traefik.http.routers.<service name>-http.entrypoints=web"
+      - "traefik.http.routers.<service name>-http.middlewares=https-redirect@file"
       # Router HTTPS
-      - "traefik.http.routers.<your-domain><service name>.rule=Host(`<your-domain.com>`)"
-      - "traefik.http.routers.<your-domain><service name>.tls=true"
-      - "traefik.http.routers.<your-domain><service name>.tls.certresolver=le"
-      - "traefik.http.routers.<your-domain><service name>.entrypoints=websecure"
-      - "traefik.http.services.<your-domain><service name>.loadbalancer.server.port=80"
+      - "traefik.http.routers.<service name>.rule=Host(`<your-domain.com>`)"
+      - "traefik.http.routers.<service name>.tls=true"
+      - "traefik.http.routers.<service name>.tls.certresolver=le"
+      - "traefik.http.routers.<service name>.entrypoints=websecure"
+      - "traefik.http.services.<service name>.loadbalancer.server.port=80"
 ```
 
 #### Initial installation
@@ -37,8 +38,8 @@
 Copy default container files to your host
 ```bash
 sudo mkdir -p <DATADIR>/apache24/<your-domain.com>
-sudo docker cp <container-id><container-name><your-domain.com>:/etc/apache/ <DATADIR>/apache24/<your-domain.com>/config/
-sudo docker cp <container-id><container-name><your-domain.com>:/usr/local/etc/php/ <DATADIR>/apache24/<your-domain.com>/config/
+sudo docker cp <container-id><service name>:/etc/apache/ <DATADIR>/apache24/<your-domain.com>/config/
+sudo docker cp <container-id><service name>:/usr/local/etc/php/ <DATADIR>/apache24/<your-domain.com>/config/
 ```
 
 Change permissions to your docker user, this will allow you to change, add or remove files
@@ -55,3 +56,14 @@ Activate the additional volumes in your docker-compose file
 ```
 
 > **Run your docker-compose again**
+
+
+#### Placeholders
+
+Key | Example
+--- | ---
+`<service name>` | **example-website**
+`<your-domain.com>` | **example.com**
+`<docker-user>` | *docker*
+`<docker-group>` | *docker*
+`<DATADIR>` | **/srv/docker**

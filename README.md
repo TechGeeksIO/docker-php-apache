@@ -35,14 +35,13 @@
       - "traefik.http.routers.<service name>.entrypoints=websecure"
       - "traefik.http.services.<service name>.loadbalancer.server.port=80"
 ```
-
+> **Run your docker-compose**
 <br/><br/>
 
 #### Additional steps to get access to the apache & php configs
 
 Copy default container files to your host
 ```bash
-sudo mkdir -p <DATADIR>/apache24/<your-domain.com>
 sudo docker cp <container-id><service name>:/etc/apache/ <DATADIR>/apache24/<your-domain.com>/config/
 sudo docker cp <container-id><service name>:/usr/local/etc/php/ <DATADIR>/apache24/<your-domain.com>/config/
 ```
@@ -51,8 +50,6 @@ Change permissions to your docker user, this will allow you to change, add or re
 ```bash
 sudo chown -R <docker-user>:<docker-group> <DATADIR>/apache24
 ```
-
-> **Run your docker-compose**
 
 Activate the additional volumes in your docker-compose file
 ```bash

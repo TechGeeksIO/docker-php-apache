@@ -29,7 +29,6 @@
       - "traefik.http.routers.<your-domain><service name>.tls=true"
       - "traefik.http.routers.<your-domain><service name>.tls.certresolver=le"
       - "traefik.http.routers.<your-domain><service name>.entrypoints=websecure"
-      - "traefik.http.routers.<your-domain><service name>.middlewares=compression@file"
       - "traefik.http.services.<your-domain><service name>.loadbalancer.server.port=80"
 ```
 

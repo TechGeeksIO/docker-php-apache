@@ -38,7 +38,7 @@
 
 <br/><br/>
 
-#### Initial installation
+#### Additional steps to get access to the apache & php configs
 
 Copy default container files to your host
 ```bash

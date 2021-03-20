@@ -34,7 +34,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -q \
     && a2enmod rewrite
 
 # Use the default production configuration
-RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+COPY configs/php.ini /usr/local/etc/php/
 
 # Install Composer.
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \

@@ -2,7 +2,7 @@
 ### This container includes PHP 7.4, Apache 2.4 and all common modules
 
 
-### Docker-compose example with traefik 2 reverse proxy
+#### Docker-compose example with traefik 2 reverse proxy
 ```
   <your-domain><service name>:
     image: techgeeks/php-apache-dev:latest
@@ -33,7 +33,8 @@
       - "traefik.http.services.<your-domain><service name>.loadbalancer.server.port=80"
 ```
 
-### Initial installation
+#### Initial installation
+
 Copy default container files to your host
 ```bash
 sudo mkdir -p <DATADIR>/apache24/<your-domain.com>

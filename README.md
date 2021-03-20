@@ -17,6 +17,9 @@
       - PGID=${PGID}
     volumes:
       - ${DATADIR}/apache24/<your-domain.com>/www:/var/www/html/
+      #### ATTENTION
+      # Leave the following volumes disabled in the first run, you can enable them later if you need them!
+      ####
       #- ${DATADIR}/apache24/<your-domain.com>/config/apache:/etc/apache2/
       #- ${DATADIR}/apache24/<your-domain.com>/config/php:/usr/local/etc/php/
     labels:

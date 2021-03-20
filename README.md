@@ -1,5 +1,5 @@
 ## Custom PHP-Apache Docker Container
-### This container includes PHP 7.4, Apache 2.4 and all common modules
+### This container includes PHP 7.4, Apache 2.4 and all common modules + composer
 
 
 #### Docker-compose example with traefik 2 reverse proxy
@@ -33,6 +33,8 @@
       - "traefik.http.services.<service name>.loadbalancer.server.port=80"
 ```
 
+
+
 #### Initial installation
 
 Copy default container files to your host
@@ -58,7 +60,9 @@ Activate the additional volumes in your docker-compose file
 > **Run your docker-compose again**
 
 
-#### Placeholders
+
+
+### Placeholders
 
 Key | Example
 --- | ---

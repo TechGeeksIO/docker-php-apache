@@ -44,8 +44,9 @@
 Copy default container files to your host
 ```bash
 sudo mkdir <DATADIR>/apache24/<your-domain.com>/config
-sudo docker cp <container-id><service name>:/etc/apache/ <DATADIR>/apache24/<your-domain.com>/config/
+sudo docker cp <container-id><service name>:/etc/apache2/ <DATADIR>/apache24/<your-domain.com>/config/
 sudo docker cp <container-id><service name>:/usr/local/etc/php/ <DATADIR>/apache24/<your-domain.com>/config/
+sudo mv <DATADIR>/apache24/<your-domain.com>/config/apache2 <DATADIR>/apache24/<your-domain.com>/config/apache
 ```
 
 Change permissions to your docker user, this will allow you to change, add or remove files

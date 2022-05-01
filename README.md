@@ -1,5 +1,5 @@
 ## Custom PHP-Apache Docker Container
-### This container includes PHP 8, Apache 2.4 and all common modules + composer
+### This container includes PHP 7, Apache 2.4 and all common modules + composer
 
 <br/><br/>
 #### Docker-compose example with traefik 2 reverse proxy

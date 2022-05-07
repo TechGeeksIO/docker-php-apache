@@ -1,4 +1,4 @@
-FROM php:8-apache
+FROM php:7.4-apache
 LABEL maintainer="admin@techgeeks.io"
 
 # Download script to install PHP extensions and dependencies
